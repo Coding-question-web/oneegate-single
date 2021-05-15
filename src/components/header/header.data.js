@@ -11,10 +11,14 @@ const details = [
     path: "pricing",
     label: "Pricing",
   },
+  // {
+  //   path: "testimonial",
+  //   label: "Testimonial",
+  // },
   {
-    path: "testimonial",
-    label: "Testimonial",
-  },
+    path: 'team',
+    label: 'Team'
+  }
 ];
 
 export default details;

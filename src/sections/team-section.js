@@ -182,7 +182,7 @@ const data = [
 export default function TeamSection() {
   const [colorMode] = useColorMode();
   return (
-    <section sx={{ pt: 50 }}>
+    <section sx={{ pt: 50, pb: 50 }} id="team">
       <Container>
         <SectionHeader
           slogan="our team"
