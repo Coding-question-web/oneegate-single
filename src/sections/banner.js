@@ -2,9 +2,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Container, Box, Heading, Text, Button } from "theme-ui";
-// import BannerImg from "../assets/banner-thumb.png";
-import ShapeLeft from "../assets/shape-left.png";
-import ShapeRight from "../assets/shape-right.png";
 import { useColorMode } from "theme-ui";
 import { motion } from "framer-motion";
 
@@ -12,6 +9,7 @@ export default function Banner() {
   const [colorMode] = useColorMode();
   return (
     <section sx={styles.banner} id="home">
+      <video src="/bg/bg.mp4" muted autoPlay loop sx={styles.video}></video>
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
           <motion.div
@@ -59,10 +57,17 @@ export default function Banner() {
 }
 
 const styles = {
+  video: {
+    position: "absolute",
+    zIndex: -199,
+    bottom: 0,
+    right: 0,
+  },
   banner: {
     pt: ["140px", "145px", "155px", "170px", null, null, "180px", "215px"],
     pb: [2, null, 0, null, 2, 0, null, 5],
     position: "relative",
+    height: "100vh",
     zIndex: 2,
     "&::before": {
       position: "absolute",
@@ -72,7 +77,6 @@ const styles = {
       height: "100%",
       width: "100%",
       zIndex: -1,
-      backgroundImage: `url(${ShapeLeft})`,
       backgroundRepeat: `no-repeat`,
       backgroundPosition: "bottom left",
       backgroundSize: "36%",
@@ -85,7 +89,6 @@ const styles = {
       height: "100%",
       width: "100%",
       zIndex: -1,
-      backgroundImage: `url(${ShapeRight})`,
       backgroundRepeat: `no-repeat`,
       backgroundPosition: "bottom right",
       backgroundSize: "32%",
